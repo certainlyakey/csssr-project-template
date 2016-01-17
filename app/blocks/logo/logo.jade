@@ -1,4 +1,19 @@
-include ../icon/icon
+//- include ../vector-icon/vector-icon
 
-mixin logo()
-	+icon('uranchik').logo&attributes(attributes)
+mixin logo(text, tag, backgroundimage, subtitle)
+	if !tag
+		- tag = 'div'
+	+b(tag).logo
+		if backgroundimage
+			+e('span').hidden #{text}
+		if subtitle
+			if tag.slice(0,1) === 'h'
+				- heading_number = parseInt(tag.slice(-1))
+				if heading_number < 6
+					- heading_number++
+					- subtitleTag = 'h' + heading_number
+				else 
+					- subtitleTag = 'div'
+			else 
+				- subtitleTag = 'div'
+			+e(subtitleTag).sublogo #{subtitle}

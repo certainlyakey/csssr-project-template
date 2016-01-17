@@ -1,0 +1,39 @@
+[
+	{
+		 "type":"text"
+		,"id":"name"
+		,"label":"Полное ФИО"
+		,"value":"Беляев Александр Ашотович"
+	}
+	,{
+		 "type":"number"
+		,"id":"birth"
+		,"label":"Год рождения"
+		,"value":"1984"
+		,"attributes": {
+			 "min":"1900"
+			,"max":"2016"
+		}
+	}
+	,{
+		 "type":"text"
+		,"id":"birthplace"
+		,"label":"Место рождения"
+		,"value":"г. Москва, Россия"
+	}
+	,{
+		"type":"text"
+		,"id":"skype"
+		,"label":"Скайп"
+		,"value":"certainlyakey"
+		,"attributes": [
+			 {"pattern":"[A-Za-z]"}
+		]
+	}
+	,{
+		"type":"email"
+		,"id":"email"
+		,"label":"Почта"
+		,"value":"certainlyakey@gmail.com"
+	}
+]

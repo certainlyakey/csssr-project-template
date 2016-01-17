@@ -1,0 +1,10 @@
+include ../content/content
+include ../title/title
+include ../formitems/formitems
+
+mixin form-anketa()
+	+content()
+		form(method="POST",action="").form-anketa
+			+title()
+				| Дело
+			+formitems(getData('formitems'))

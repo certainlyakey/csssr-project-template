@@ -1,0 +1,9 @@
+mixin formitems(formitems)
+	each item in formitems
+		+e.item
+			label(for=item.id) #{item.label}
+			- var attributes = item.attributes
+			if attributes
+				input(type=item.type, value=item.value, id=item.id)&attributes(attributes)
+			else 
+				input(type=item.type, value=item.value, id=item.id)
