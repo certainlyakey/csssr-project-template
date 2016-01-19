@@ -1,0 +1,26 @@
+[
+	{
+		 "name":"skills"
+		,"type":"checkbox"
+		,"controls": [
+			 {"id":"bem", "label":"Методогия БЭМ","is_checked":"true"}
+			,{"id":"jquery", "label":"jQuery","is_checked":"true"}
+			,{"id":"grunt", "label":"Использую GRUNT","is_checked":"false"}
+			,{"id":"haml", "label":"HAML","is_checked":"true"}
+			,{"id":"sass", "label":"SASS","is_checked":"true"}
+			,{"id":"less", "label":"LESS","is_checked":"false"}
+			,{"id":"coffeescript", "label":"CoffeeScript","is_checked":"false"}
+			,{"id":"jade", "label":"Jade","is_checked":"true"}
+			,{"id":"stylus", "label":"Stylus","is_checked":"true"}
+			,{"id":"angular", "label":"Знаю (изучаю) Angular","is_checked":"false"}
+			,{"id":"android", "label":"Верстка под Android","is_checked":"false"}
+			,{"id":"ios", "label":"Верстка под iOS","is_checked":"false"}
+			,{"id":"windowsphone", "label":"Верстка под Windows Phone","is_checked":"false"}
+			,{"id":"mail", "label":"Верстка рассылок","is_checked":"true"}
+			,{"id":"responsive", "label":"Адаптивная верстка","is_checked":"true"}
+			,{"id":"dropbox", "label":"Использую Dropbox","is_checked":"true"}
+			,{"id":"gmail", "label":"Использую Gmail","is_checked":"true"}
+			,{"id":"github", "label":"Использую GitHub","is_checked":"true"}
+		]
+	}
+]
