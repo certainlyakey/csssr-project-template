@@ -1,19 +1,36 @@
-//- include ../vector-icon/vector-icon
+//- this mixin is created for the specific project of CSSSR test work
+
+- function get_subtitletag(mainlogotag) { 
+	- var heading_number = 0;
+	- if (mainlogotag.slice(0,1) === 'h') {
+		- var heading_number = parseInt(mainlogotag.slice(-1));
+		- if (heading_number < 6) {
+			- heading_number++;
+			- subtitleTag = 'h' + heading_number;
+		- } else {
+			- subtitleTag = 'div';
+		- }
+	- }
+	- else {
+		- subtitleTag = 'div'
+	- }
+	- return subtitleTag	
+- }
 
 mixin logo(text, tag, backgroundimage, subtitle)
 	if !tag
 		- tag = 'div'
-	+b(tag).logo
-		if backgroundimage
-			+e('span').hidden #{text}
-		if subtitle
-			if tag.slice(0,1) === 'h'
-				- heading_number = parseInt(tag.slice(-1))
-				if heading_number < 6
-					- heading_number++
-					- subtitleTag = 'h' + heading_number
+	if subtitle
+		+b.logogroup
+			+b(tag).mainlogo
+				if backgroundimage
+					+e('span').hidden #{text}
 				else 
-					- subtitleTag = 'div'
+					| #{text}
+			+e(get_subtitletag(tag)).sublogo #{subtitle}
+	else
+		+b(tag).mainlogo
+			if backgroundimage
+				+e('span').hidden #{text}
 			else 
-				- subtitleTag = 'div'
-			+e(subtitleTag).sublogo #{subtitle}
+				| #{text}

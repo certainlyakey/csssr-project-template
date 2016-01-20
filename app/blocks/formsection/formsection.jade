@@ -1,0 +1,5 @@
+mixin formsection(tag)
+	if !tag
+		- tag = 'div'
+	+b(tag).formsection&attributes(attributes)
+		block

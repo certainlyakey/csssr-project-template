@@ -1,7 +1,33 @@
-.list
-	padding-x 20px
+.formitem
+	display flex
+	margin-bottom 16px
+	
+	&:last-child
+		margin-bottom 0
 
-	&__item
-		display block
-		font-size 16px
-		line-height 24px
+	&__label
+		flex 0 0 auto
+		order 1
+		margin-right 18px
+		@extends $mediumtext
+
+	&__input-text
+		flex 1 0 15em
+		order 2
+		font-family $monospace
+		font-size 30px
+		background url("../images/brownstripe.png") repeat-x left bottom
+		top -18px
+		position relative
+		padding-bottom 8px
+		padding-left 16px
+	
+		&::selection
+			background-color $color_dark
+			color $color_bg
+		
+		&_sized
+			flex 0 0 auto
+			padding-right @padding-left
+			
+			

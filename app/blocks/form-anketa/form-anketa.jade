@@ -1,7 +1,9 @@
 include ../content/content
 include ../title/title
 include ../formitems/formitems
+include ../formsection/formsection
 include ../checkcontrols/checkcontrols
+include ../range/range
 
 mixin form-anketa()
 	+content()
@@ -9,29 +11,26 @@ mixin form-anketa()
 			+title()
 				| Дело
 			
-			+formitems(getData('formitems'))
+			+formsection('fieldset')
+				+formitems(getData('formitems'))
 
-			+b.formitem
-				+e('span').label_inline Выпускник #[a(href="http://htmlacademy.ru") htmlacademy.ru]
-				+checkcontrols('is-graduateacademy', 'yes', 'radio', 'Да', 'false')
-				+checkcontrols('is-graduateacademy', 'no', 'radio', 'Нет', 'false')
-				+checkcontrols('is-graduateacademy', 'tutor', 'radio', 'Наставник', 'true')
+			+formsection('fieldset')._inline
+				+e('legend').label_inline Выпускник #[a(href="http://htmlacademy.ru") htmlacademy.ru]
+				+checkcontrols('is-graduateacademy', 'yes', 'radio', 'Да', 'false', 'formsection__input_inline')
+				+checkcontrols('is-graduateacademy', 'no', 'radio', 'Нет', 'false', 'formsection__input_inline')
+				+checkcontrols('is-graduateacademy', 'tutor', 'radio', 'Наставник', 'true', 'formsection__input_inline')
 				
-			+b.formitem
-				+e('h2').label_block Практические навыки
+			+formsection('fieldset')
+				+e('legend').label_block Практические навыки
 				+b('small').small-text_asterisk Отметьте только те технологии и типы задач, с которыми вы хорошо знакомы. Отсутствие опыта отнюдь не означает, что у вас меньше шансов стать нашим сотрудником. Это означает, что вы будете получать те задачи, с которыми гарантированно будете справляться.
 				+b.flowing-columns
 					+checkcontrols(getData('checkcontrols'))
 
-			+b.formitem
+			+formsection()
 				+e('label').label_block(for='js_levels') Уровень владения JavaScript
-				datalist(id='js_levels_descriptions')
-					option Не владею
-					option Использую готовые решения
-					option Использую готовые решения и умею их переделывать
-					option Пишу сложные скрипты
-				input(type='range', min='1', max='4', list='js_levels_descriptions', id='js_levels', value='3')
+				+range()
 
-			+b.formitem
-				+e('label').label(for='date') Дата заполнения
-				+e('input').input-text_sized(type='date', size='10', id='date', value='19.01.2016')
+			+formsection('fieldset')
+				+b.formitem
+					+e('label').label(for='date') Дата заполнения
+					+e('input').input-text_sized(type='date', size='10', id='date', value='19.01.2016')

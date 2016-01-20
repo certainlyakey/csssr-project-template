@@ -10,3 +10,4 @@ gulp.task('copy', () => (
 		.pipe(gulpif(!gutil.env.robots, filter(file => !/resources[\\\/]robots\.txt/.test(file.path))))
 		.pipe(gulp.dest('dist'))
 ));
+gulp.src(['app/images/**/*']).pipe(gulp.dest('dist/assets/images'));

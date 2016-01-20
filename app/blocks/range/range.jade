@@ -1,0 +1,8 @@
+mixin range(tag)
+	+b(tag).range&attributes(attributes)
+		+e('input').slider(type='range', min='1', max='4', name='js_levels', id='js_levels', value='3')
+		+b('ul').range-datalist
+			+e('li').item_level1 Не владею
+			+e('li').item_level2 Использую готовые решения
+			+e('li').item_level3 Использую готовые решения и умею их переделывать
+			+e('li').item_level4 Пишу сложные скрипты

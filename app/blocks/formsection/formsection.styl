@@ -1,0 +1,59 @@
+.formsection
+	margin-bottom 32px
+	
+	&__label
+		@extends $mediumtext
+
+		&_inline
+			float left
+			margin-right 26px
+		
+		&_block
+			margin-bottom 10px
+			display block
+			
+		
+
+	&__input
+
+		&_inline
+			display inline
+			margin-right 10px
+			
+			
+	&_inline
+		margin-bottom 48px
+
+.flowing-columns
+	margin-top 23px
+	display flex
+	flex-wrap wrap
+	flex-direction column
+	height 260px
+	
+	.checkcontrol
+		margin-bottom 9px
+		width 33%
+		flex 0 1 auto
+		
+		&__label
+			margin-left 28px
+			display block
+			line-height 25px
+		
+		&__input
+			float left
+
+.small-text
+	color $color_bleak
+	font-size $fs_small
+	line-height 22px
+	position relative
+	display block
+	
+	&_asterisk:before
+		content '*'
+		font-size 36px
+		position absolute
+		left -20px
+		margin-top 10px

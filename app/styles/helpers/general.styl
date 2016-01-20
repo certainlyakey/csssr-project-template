@@ -1,0 +1,13 @@
+a
+	color $color_link
+	
+	&:focus
+		color $color_bright
+		text-shadow 0px 2px 6px currentColor
+
+input:focus + label
+	color $color_bright
+	transition all .13s ease-in
+	
+input:invalid
+	color $color_danger

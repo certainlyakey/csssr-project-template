@@ -1,5 +1,5 @@
 mixin formitems(formitems)
 	each item in formitems
 		+b.formitem
-			+e('label').label(for=item.id) #{item.label}
 			+e('input').input-text(type=item.type, value=item.value, id=item.id)&attributes(item.attributes ? item.attributes : {})
+			+e('label').label(for=item.id) #{item.label}

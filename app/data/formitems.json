@@ -26,9 +26,9 @@
 		,"id":"skype"
 		,"label":"Скайп"
 		,"value":"certainlyakey"
-		,"attributes": [
-			 {"pattern":"[A-Za-z]"}
-		]
+		,"attributes": {
+			"pattern":"[A-Za-z]+"
+		}
 	}
 	,{
 		"type":"email"

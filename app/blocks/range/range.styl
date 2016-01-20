@@ -1,0 +1,131 @@
+thumb()
+	sprite $sliderarrow
+	cursor pointer	
+
+track()
+	width 100%
+	height 31px
+	background url("../images/brownstripe.png") repeat-x left bottom
+	cursor pointer
+
+.range
+	position relative
+	margin-bottom 80px
+	margin-top 23px
+	
+	&__slider
+		
+
+		//resetting styles
+		-webkit-appearance none
+		-moz-appearance none
+		width 100%
+		background-color transparent
+		position relative
+		
+		&::-webkit-slider-thumb //thumb
+			-webkit-appearance none
+		
+		&:focus
+			outline none
+
+		&:focus::-moz-focus-outer
+			border none
+		
+		&::-ms-track
+			width 100%
+			cursor pointer
+			background transparent
+			border-color transparent
+			color transparent
+	
+
+		//main styling
+			
+		//thumb
+			
+		&::-webkit-slider-thumb
+			thumb()
+			margin-top 9px /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+
+		&::-moz-range-thumb
+			background none
+			thumb()
+			border-radius 0
+			border none
+
+		&::-ms-thumb
+			thumb()
+			
+		&:focus::-webkit-slider-thumb
+			sprite $sliderarrowfocused
+			
+		&:focus::-moz-range-thumb
+			sprite $sliderarrowfocused
+			
+		&:focus::-ms-thumb
+			sprite $sliderarrowfocused
+
+		//track
+		&::-webkit-slider-runnable-track
+			track()
+		
+		&::-moz-range-track
+			track()
+			
+		&::-ms-track
+			track()
+			
+		&::-ms-fill-lower
+		&::-ms-fill-upper
+			background transparent
+
+	
+.range-datalist
+	display flex
+	font-weight bold
+	justify-content space-between
+	font-size $fs_small
+	position relative
+	clearfix
+
+	&__item
+		flex 1 1 50px
+		position relative
+		padding-top 32px
+		
+		&:before
+			content ''
+			border-left 4px $color_dark solid
+			display block
+			position absolute
+			height 11px
+			top 0
+			left 50%
+			margin-left -2px
+			
+		
+		&:first-child
+			text-align left
+
+			&:before
+				height 23px
+				left 0
+				margin-left 0
+			
+		&:last-child
+			text-align right
+
+			&:before
+				height 23px
+				right 0
+				left auto
+				
+		&_level2
+			left -29px
+			
+		&_level3
+			right -29px
+		
+	@media screen and (-webkit-min-device-pixel-ratio:0)
+		top -5px

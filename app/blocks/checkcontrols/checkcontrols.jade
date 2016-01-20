@@ -1,11 +1,11 @@
-mixin checkcontrols(data, id, type, label, is_checked)
+mixin checkcontrols(data, id, type, label, is_checked, classname)
 	if typeof(data) === 'object'
 		each control in data[0].controls
-			+b.checkcontrol
-				+e('input')(class="input-#{data[0].type}", type=data[0].type, name=data[0].name, checked=control.is_checked!=="false", id=data[0].name+'_'+control.id, value=data[0].name+'_'+control.id)
+			+b(class="checkcontrol #{classname || ''}")
+				+e('input')(class="input_#{data[0].type}", type=data[0].type, name=data[0].name, checked=control.is_checked!=="false", id=data[0].name+'_'+control.id, value=data[0].name+'_'+control.id)
 				+e('label').label(for=data[0].name+'_'+control.id) #{control.label}
 	else 
 		- var name = data
-		+b.checkcontrol
-			+e('input')(class="input-#{type}", type=type, name=name, checked=is_checked!=="false", id=name+'_'+id, value=name+'_'+id)
+		+b(class="checkcontrol #{classname || ''}")
+			+e('input')(class="input_#{type}", type=type, name=name, checked=is_checked!=="false", id=name+'_'+id, value=name+'_'+id)
 			+e('label').label(for=name+'_'+id) #{label}
