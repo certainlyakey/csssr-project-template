@@ -1,1 +1,1 @@
-# CSSSR Project Template - CSSSR Anketa of Aleksandr Beliaev
+# CSSSR Project Template
